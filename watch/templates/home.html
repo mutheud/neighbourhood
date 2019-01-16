@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block content %}
+<img src='https://images.pexels.com/photos/8047/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940' width="100%;" heigth="300px;">
+<div class="container-fluid" id="pro">
+    {% if request.user.profile.neighborhood %}
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <a  href="{% url 'hood' neighborhood_id=request.user.profile.neighborhood.id %}" class="btn btn-outline-dark">View
+                Current Neighborhood</a>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    {% endif %}
+    <div class="row">
+
+        <div class="col-md-2"></div>
+        {% for hood in hoods%}
+        <div class="card col-md-4" id="hoody">
+            <img class="card-img-top img-responsive" src="{{hood.view.url}}" alt="Card image cap" height="200px;" width="300px;" />
+            <div class="card-body">
+
+                <p><strong>{{hood.name}}</strong> {{hood.location}}</p>
+                <a href="{% url 'join' neighborhood_id=hood.id %}" class="btn btn-outline-success">Join Neighborhood</a>
+                <p class="card-text" style="font-size:14px;"><small class="text-muted">Since
+                        {{hood.pub_date|timesince}}</small></p>
+
+            </div>
+        </div>
+        {% endfor %}
+        <div class="col-md-2"></div>
+
+    </div>
+    {% endblock %}
