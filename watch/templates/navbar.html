@@ -1,0 +1,75 @@
+{% load bootstrap4 %}
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-fluid" id="nav">
+        <div class="topnav" id="nav">
+            <div class="row">
+                <div class="col-md-2">
+                    <div id="main">
+                        <a href="{% url 'home_page' %}">
+                            <img src='data:image/png;base64,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' width="30px;" height="30x;" class="img-responsive"
+                                >
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4" id="logo">
+                    <a href="{% url 'home_page' %}" style="color:white;"><strong>Neighborhood Watch.</strong></a>
+                </div>
+                <div class="col-md-2" height="5px;" width="10px;">
+                    <form class="navbar-form" role="search" action="">
+                        <input type="text" name="search" placeholder="Search.." id="input">
+                    </form>
+
+                </div>
+                <div class="col-md-2" style="text-align: center; padding-top: 16px; font-size: 13px; color:white;background-color:rgba(0,0,0,0.9); opacity: 0.9;">
+                    <a href="{% url 'add_hood' %}" style="color: white;">ADD NEW HOOD!</a>
+                </div>
+                <div class="col-md-2" id="drop">
+                    {% if user.is_authenticated %}
+                    <ul class="" style="position:absolute;">
+                        <li class="dropdown btn profile-settings-btn" style="list-style:none;" aria-label="profile settings"> 
+                            
+                            <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" role="button"
+                                aria-expanded="false"><i class="fa fa-cog" aria-hidden="true"></i>
+                            </a>
+                            <ul class="dropdown-menu" role="menu" style="position: absolute;left: 0px;
+                            top: 0px;
+                            z-index: 1;">
+                                <li>
+                                    <a href="{% url 'home_page' %}">Home</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'edit_profile' %}">Edit Profile</a>
+                                </li>
+                                <li>
+                                    <a href="/accounts/password/change">Change Password</a>
+                                </li>
+                                <li>
+                                    <a href="/logout">Logout</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    {% else %}
+                    <li style="list-style: none;">
+                        <a href="/accounts/register/" style="color:white; font-size: 13px;">REGISTER /</a>
+                        <a class='btn btn-default' href="/accounts/login" style="color:white; font-size: 13px;">LOGIN</a>
+                    </li>
+
+                    {% endif %}
+                    {% if data.profile.Profile_photo %}
+                    <img src="{{profile.profile.Profile_photo.url}}" alt="img" width="50px" height="50px ">
+                    <h1 class="profile-user-name" style="font-size: 14px;">{{profile.username}}</h1>
+                    {% endif %}
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</body>
